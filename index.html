@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ben Teng | Data &amp; AI Portfolio</title>
   <meta name="description" content="Ben Teng, Operations & Information Management student at UMass Amherst who builds with data and AI. Seeking data analytics, BI, and ML internships.">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -25,31 +27,90 @@
 
   <main id="main">
     <!-- ========== HERO ========== -->
-    <section class="hero container" id="top">
-      <p class="eyebrow">UMass Amherst · Isenberg School of Management · Class of 2030</p>
-      <h1>Ben Teng</h1>
-      <p class="headline">Operations &amp; Information Management student who builds with data and AI.</p>
-      <p class="lead">
-        I'm a first-year B.B.A. student at UMass Amherst's Isenberg School of Management,
-        planning a second major in computer science. Right now I'm the data analyst on a supply-chain
-        scaling project, modeling demand growth with Python, SQL, and Excel. I'm looking for
-        summer internships in data analytics, business intelligence, and machine learning.
-      </p>
-      <div class="button-row">
-        <a class="btn btn-primary" href="resume/Ben_Teng_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-        <a class="btn" href="https://www.linkedin.com/in/ben-teng-31b1a333a/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn" href="https://github.com/benteng30" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn" href="mailto:bteng@umass.edu">Email</a>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow reveal">UMass Amherst · Isenberg School of Management · Class of 2030</p>
+          <h1 class="reveal">Ben Teng</h1>
+          <p class="headline reveal">Operations &amp; Information Management student who builds with data and AI.</p>
+          <p class="lead reveal">
+            I'm a first-year B.B.A. student at UMass Amherst's Isenberg School of Management,
+            planning a second major in computer science. Right now I'm the data analyst on a supply-chain
+            scaling project, modeling demand growth with Python, SQL, and Excel. I'm looking for
+            summer internships in data analytics, business intelligence, and machine learning.
+          </p>
+          <div class="button-row reveal">
+            <a class="btn btn-primary" href="resume/Ben_Teng_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+            <a class="btn" href="https://www.linkedin.com/in/ben-teng-31b1a333a/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="https://github.com/benteng30" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="mailto:bteng@umass.edu">Email</a>
+          </div>
+        </div>
+
+        <!-- Hero illustration: supply chain network feeding a demand forecast -->
+        <figure class="hero-art reveal" aria-hidden="true">
+          <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
+            <!-- panel -->
+            <rect x="10" y="10" width="400" height="360" rx="18" class="art-panel"/>
+            <!-- network edges -->
+            <g class="edges">
+              <path id="e1" d="M94 90 L166 70"/>
+              <path id="e2" d="M94 90 L166 140"/>
+              <path id="e3" d="M94 160 L166 140"/>
+              <path id="e4" d="M214 70 L296 105"/>
+              <path id="e5" d="M214 140 L296 105"/>
+            </g>
+            <!-- moving dots along edges (shipments / data) -->
+            <g class="flow">
+              <circle r="4"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion></circle>
+              <circle r="4"><animateMotion dur="3.6s" begin="0.8s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>
+              <circle r="4"><animateMotion dur="3s" begin="1.4s" repeatCount="indefinite"><mpath href="#e3"/></animateMotion></circle>
+              <circle r="4"><animateMotion dur="2.8s" begin="0.4s" repeatCount="indefinite"><mpath href="#e4"/></animateMotion></circle>
+              <circle r="4"><animateMotion dur="3.1s" begin="1.9s" repeatCount="indefinite"><mpath href="#e5"/></animateMotion></circle>
+            </g>
+            <!-- nodes -->
+            <g class="node"><rect x="46" y="72" width="48" height="36" rx="8"/><text x="70" y="128">Supply</text></g>
+            <g class="node"><rect x="46" y="142" width="48" height="36" rx="8"/><text x="70" y="198">Supply</text></g>
+            <g class="node"><rect x="166" y="52" width="48" height="36" rx="8"/><text x="190" y="44">Plant</text></g>
+            <g class="node"><rect x="166" y="122" width="48" height="36" rx="8"/><text x="190" y="176">Warehouse</text></g>
+            <g class="node node-accent"><circle cx="320" cy="105" r="24"/><text x="320" y="146">Customers</text></g>
+
+            <!-- forecast chart -->
+            <line x1="46" y1="335" x2="374" y2="335" class="axis"/>
+            <g class="bars">
+              <rect x="56"  y="305" width="22" height="30" rx="3"/>
+              <rect x="88"  y="296" width="22" height="39" rx="3"/>
+              <rect x="120" y="300" width="22" height="35" rx="3"/>
+              <rect x="152" y="284" width="22" height="51" rx="3"/>
+              <rect x="184" y="276" width="22" height="59" rx="3"/>
+              <rect x="216" y="264" width="22" height="71" rx="3"/>
+            </g>
+            <path class="trend" pathLength="400" d="M67 305 L99 296 L131 300 L163 284 L195 276 L227 264"/>
+            <path class="forecast" d="M227 264 L259 252 L291 240 L323 226 L355 212"/>
+            <path class="band" d="M227 264 L259 246 L291 228 L323 208 L355 188 L355 236 L323 244 L291 252 L259 258 Z"/>
+            <text x="326" y="196" class="chart-label">forecast</text><text x="142" y="355" class="chart-label">demand history</text>
+          </svg>
+        </figure>
       </div>
     </section>
 
     <!-- ========== PROJECTS ========== -->
     <section class="section container" id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
+      <h2 id="projects-title" class="reveal">Projects</h2>
 
       <div class="cards">
         <!-- Project 1: AI chatbot -->
-        <article class="card">
+        <article class="card reveal">
+          <div class="card-art" aria-hidden="true">
+            <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="24" y="18" width="150" height="34" rx="12" class="bubble-user"/>
+              <rect x="38" y="30" width="96" height="8" rx="4" class="line-light"/>
+              <rect x="140" y="62" width="156" height="42" rx="12" class="bubble-bot"/>
+              <rect x="154" y="74" width="120" height="7" rx="3.5" class="line-dark"/>
+              <rect x="154" y="88" width="80" height="7" rx="3.5" class="line-dark"/>
+              <g class="typing"><circle cx="46" cy="84" r="5"/><circle cx="62" cy="84" r="5"/><circle cx="78" cy="84" r="5"/></g>
+            </svg>
+          </div>
           <h3>AI Chatbot for Westwood Chinese School</h3>
           <p class="problem"><strong>Problem:</strong> Parents and students had routine questions about the school that staff answered one by one.</p>
           <p class="tools"><span>[ADD CHATBOT TOOL]</span><span>[ADD WEBSITE PLATFORM]</span></p>
@@ -61,7 +122,21 @@
         </article>
 
         <!-- Project 2: Air Dialogue website -->
-        <article class="card">
+        <article class="card reveal">
+          <div class="card-art" aria-hidden="true">
+            <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+              <rect x="30" y="12" width="260" height="100" rx="10" class="browser"/>
+              <line x1="30" y1="32" x2="290" y2="32" class="browser-line"/>
+              <circle cx="44" cy="22" r="3.5" class="dot"/><circle cx="56" cy="22" r="3.5" class="dot"/><circle cx="68" cy="22" r="3.5" class="dot"/>
+              <rect x="46" y="44" width="110" height="10" rx="5" class="line-dark"/>
+              <rect x="46" y="60" width="80" height="7" rx="3.5" class="line-mid"/>
+              <rect x="46" y="84" width="58" height="16" rx="8" class="cta"/>
+              <g class="cms">
+                <rect x="176" y="44" width="46" height="26" rx="5"/><rect x="228" y="44" width="46" height="26" rx="5"/>
+                <rect x="176" y="76" width="46" height="26" rx="5"/><rect x="228" y="76" width="46" height="26" rx="5"/>
+              </g>
+            </svg>
+          </div>
           <h3>Air Dialogue Program Website</h3>
           <p class="problem"><strong>Problem:</strong> A new cross-cultural education program needed a way for families to learn about it and enroll online.</p>
           <p class="tools"><span>Velo</span><span>JavaScript</span><span>Wix CMS</span></p>
@@ -75,9 +150,10 @@
         <!--
           TEMPLATE for your next project (demand forecasting, SQL dashboard, sentiment analysis).
           Copy this whole <article> block, paste it above this comment, and fill it in
-          once the project is finished and on GitHub.
+          once the project is finished and on GitHub. You can reuse one of the card-art
+          SVGs above or ask Claude for a new one.
 
-        <article class="card">
+        <article class="card reveal">
           <h3>Project Title</h3>
           <p class="problem"><strong>Problem:</strong> One sentence on the question you answered.</p>
           <p class="tools"><span>Python</span><span>pandas</span><span>scikit-learn</span></p>
@@ -94,10 +170,10 @@
 
     <!-- ========== EXPERIENCE ========== -->
     <section class="section container" id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
+      <h2 id="experience-title" class="reveal">Experience</h2>
 
       <div class="timeline">
-        <div class="job">
+        <div class="job reveal">
           <div class="job-head">
             <h3>Data Analyst, Beeken Biomedical Supply Chain Scaling Project</h3>
             <p class="meta">UMass Amherst · Fall 2026</p>
@@ -109,7 +185,7 @@
           </ul>
         </div>
 
-        <div class="job">
+        <div class="job reveal">
           <div class="job-head">
             <h3>Technical Manager, Westwood Chinese School</h3>
             <p class="meta">Westwood, MA · Sep 2022 – Jun 2026</p>
@@ -120,7 +196,7 @@
           </ul>
         </div>
 
-        <div class="job">
+        <div class="job reveal">
           <div class="job-head">
             <h3>Co-Founder, Program Manager &amp; Website Developer, Air Dialogue</h3>
             <p class="meta">Aug 2024 – Dec 2025</p>
@@ -131,7 +207,7 @@
           </ul>
         </div>
 
-        <div class="job">
+        <div class="job reveal">
           <div class="job-head">
             <h3>Freelance Web Designer / Developer, Core Tennis</h3>
             <p class="meta">Westwood, MA · Mar 2025 – Jun 2025</p>
@@ -145,21 +221,25 @@
 
     <!-- ========== SKILLS ========== -->
     <section class="section container" id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
+      <h2 id="skills-title" class="reveal">Skills</h2>
       <div class="skill-groups">
-        <div>
+        <div class="reveal">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6"/></svg>
           <h3>Languages</h3>
           <p>Python · SQL · Java · JavaScript · HTML/CSS</p>
         </div>
-        <div>
+        <div class="reveal">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 16v-4M11 16V8M16 16v-6M20 4l-5 4-4-2-6 4"/></svg>
           <h3>Data &amp; AI</h3>
           <p>Demand, sales &amp; inventory analysis · Growth-scenario modeling · LLM-based sentiment analysis · AI chatbot deployment</p>
         </div>
-        <div>
+        <div class="reveal">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg>
           <h3>Tools</h3>
           <p>Advanced Excel · Velo · Wix CMS · Google Workspace</p>
         </div>
-        <div>
+        <div class="reveal">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg>
           <h3>Training &amp; Awards</h3>
           <p>Google AI Certificate · Inspirit AI Scholars (NLP + Finance: Algorithmic Trading) · Summer Springboard at MIT, AI Certificate · ACSL First Place, Senior Contest (MA, 2024–25)</p>
         </div>
@@ -168,8 +248,8 @@
 
     <!-- ========== ABOUT ========== -->
     <section class="section container" id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
-      <p class="prose">
+      <h2 id="about-title" class="reveal">About</h2>
+      <p class="prose reveal">
         I grew up in Westwood, Massachusetts, and I speak English and Mandarin, plus some Spanish.
         I started out building websites for local organizations, and [ADD ONE SENTENCE: what pulled you
         toward data and AI]. I'm working toward a career that starts in data analytics and grows into
@@ -181,17 +261,19 @@
 
     <!-- ========== CONTACT ========== -->
     <section class="section container" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <p class="prose">The fastest way to reach me is email. I'm happy to talk about internships, projects, or anything on this page.</p>
-      <div class="button-row">
-        <a class="btn btn-primary" href="mailto:bteng@umass.edu">bteng@umass.edu</a>
-        <a class="btn" href="https://www.linkedin.com/in/ben-teng-31b1a333a/" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="contact-box reveal">
+        <h2 id="contact-title">Contact</h2>
+        <p class="prose">The fastest way to reach me is email. I'm happy to talk about internships, projects, or anything on this page.</p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="mailto:bteng@umass.edu">bteng@umass.edu</a>
+          <a class="btn" href="https://www.linkedin.com/in/ben-teng-31b1a333a/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer container">
-    <p>© 2026 Ben Teng · Built with HTML and CSS, hosted on GitHub Pages</p>
+    <p>© 2026 Ben Teng · Built with HTML, CSS, and JavaScript, hosted on GitHub Pages</p>
   </footer>
 </body>
 </html>
