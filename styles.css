@@ -1,0 +1,115 @@
+/* ===== Ben Teng portfolio styles ===== */
+/* One accent color. Change --accent to restyle the whole site. */
+:root {
+  --accent: #0f5e8c;        /* deep blue, passes WCAG AA on white */
+  --accent-dark: #0a4669;
+  --text: #1c2430;
+  --muted: #55606e;
+  --bg: #ffffff;
+  --bg-soft: #f4f6f9;
+  --border: #dde2e8;
+  --radius: 10px;
+  --max: 960px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;   /* 17px */
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--accent); color: #fff; padding: .5rem 1rem; z-index: 100;
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+/* ----- Header / nav ----- */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255,255,255,.95);
+  border-bottom: 1px solid var(--border);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 60px; flex-wrap: wrap; }
+.nav-name { font-weight: 700; color: var(--text); text-decoration: none; font-size: 1.1rem; }
+.nav-links { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; flex-wrap: wrap; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+.nav-links a:hover { color: var(--accent); }
+
+/* ----- Hero ----- */
+.hero { padding-top: 4.5rem; padding-bottom: 3.5rem; }
+.eyebrow { color: var(--accent); font-weight: 600; font-size: .9rem; letter-spacing: .02em; margin: 0 0 .75rem; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.25rem); line-height: 1.1; margin: 0 0 .5rem; }
+.headline { font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 600; margin: 0 0 1.25rem; max-width: 34ch; line-height: 1.35; }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 62ch; margin: 0 0 2rem; }
+
+/* ----- Buttons ----- */
+.button-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+.btn {
+  display: inline-block; padding: .65rem 1.15rem; border-radius: var(--radius);
+  border: 1.5px solid var(--accent); color: var(--accent);
+  text-decoration: none; font-weight: 600; font-size: .95rem;
+}
+.btn:hover { background: var(--bg-soft); }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); color: #fff; }
+
+/* ----- Sections ----- */
+.section { padding-top: 3.5rem; padding-bottom: 1rem; }
+h2 { font-size: 1.6rem; margin: 0 0 1.5rem; padding-bottom: .5rem; border-bottom: 2px solid var(--accent); display: inline-block; }
+h3 { font-size: 1.1rem; margin: 0 0 .5rem; line-height: 1.35; }
+.prose { max-width: 68ch; }
+
+/* ----- Project cards ----- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+.card {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 1.5rem; background: var(--bg);
+  display: flex; flex-direction: column;
+}
+.card p { margin: 0 0 .75rem; font-size: .98rem; }
+.card .problem { color: var(--muted); }
+.tools { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tools span {
+  background: var(--bg-soft); border: 1px solid var(--border);
+  border-radius: 999px; padding: .1rem .7rem; font-size: .85rem; color: var(--text);
+}
+.links { margin-top: auto !important; padding-top: .5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.links a { font-weight: 600; }
+
+/* ----- Experience ----- */
+.job { padding: 0 0 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.job:last-child { border-bottom: none; }
+.meta { color: var(--muted); margin: 0; font-size: .95rem; }
+.job ul { margin: .6rem 0 0; padding-left: 1.2rem; }
+.job li { margin-bottom: .35rem; }
+
+/* ----- Skills ----- */
+.skill-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+.skill-groups > div { background: var(--bg-soft); border-radius: var(--radius); padding: 1.25rem; }
+.skill-groups p { margin: 0; font-size: .98rem; }
+
+/* ----- Footer ----- */
+.site-footer { padding-top: 3rem; padding-bottom: 2rem; color: var(--muted); font-size: .9rem; }
+
+/* ----- Phones ----- */
+@media (max-width: 600px) {
+  .nav { padding-top: .5rem; padding-bottom: .5rem; }
+  .nav-links { gap: .9rem; }
+  .hero { padding-top: 2.5rem; }
+  .btn { flex: 1 1 auto; text-align: center; }
+}
+@media (max-width: 600px) { .skill-groups { grid-template-columns: 1fr; } }
