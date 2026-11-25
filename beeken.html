@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finding the Bottleneck in a Medical-Device Supply Chain | Ben Teng</title>
+  <meta name="description" content="Case study: how our UMass Amherst team mapped Beeken Biomedical's supply chain, found the step that limits output, modeled demand scenarios, and built a 90-day plan.">
+  <meta name="theme-color" content="#0b0f17">
+  <link rel="canonical" href="https://benteng30.github.io/beeken.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://benteng30.github.io/beeken.html">
+  <meta property="og:title" content="Finding the bottleneck in a medical-device supply chain">
+  <meta property="og:description" content="Case study by Ben Teng: capacity analysis, demand scenarios, and a 90-day plan for Beeken Biomedical.">
+  <meta property="og:image" content="https://benteng30.github.io/img/og-image.jpg?v=2">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+  <script>document.documentElement.classList.add('js');if('scrollRestoration' in history)history.scrollRestoration='manual';</script>
+  <link rel="stylesheet" href="styles.css?v=8">
+  <script src="script.js?v=8" defer></script>
+</head>
+<body class="case">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="nav-name" href="index.html"><span class="logo-mark" aria-hidden="true">BT</span>Ben Teng</a>
+      <ul class="nav-links">
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <article>
+      <!-- ========== HEADER ========== -->
+      <header class="case-hero container">
+        <p class="back reveal"><a href="index.html#projects"><span aria-hidden="true">←</span> All projects</a></p>
+        <p class="case-meta reveal">Case study · Fall 2026 · UMass Amherst</p>
+        <h1 class="split-chars case-title">Finding the bottleneck in a medical-device supply chain</h1>
+        <p class="lead reveal">
+          Our student team worked with Beeken Biomedical, the company behind NuStat hemostatic gauze, on one question:
+          can the current supply chain keep up as demand grows, and if not, what should the company do first?
+          I owned the team's quantitative analysis.
+        </p>
+
+        <dl class="case-facts reveal">
+          <div><dt>My role</dt><dd>Data analyst (moved over from research lead)</dd></div>
+          <div><dt>Team</dt><dd>UMass Amherst student team, working with Beeken's leadership</dd></div>
+          <div><dt>Course</dt><dd>UNIV 150, UMass Amherst</dd></div>
+          <div><dt>Deliverable</dt><dd>Recommendation deck and 90-day plan for Beeken, November 2026</dd></div>
+        </dl>
+
+        <p class="note reveal">
+          <strong>About the numbers.</strong> Beeken's data is confidential, so the charts on this page show
+          how the analysis works, not the real figures. They are drawn to explain the method and are not to scale.
+        </p>
+      </header>
+
+      <!-- ========== THE QUESTION ========== -->
+      <section class="case-section container" aria-labelledby="q-title">
+        <div class="case-grid">
+          <div class="section-head reveal" data-anim="none"><h2 id="q-title" class="mask">The question</h2></div>
+          <div class="case-body">
+            <p class="reveal">
+              Demand for NuStat was set to grow fast: the core product was expected to roughly double, and several
+              new products were planned to launch on top of it. The company needed to know whether its suppliers
+              could keep up, and where the first problem would show up.
+            </p>
+            <p class="reveal">
+              The easy assumption is that the answer depends on how much demand grows. What we found is that it
+              depends on <em>one step</em> in the chain.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== STEP 1 ========== -->
+      <section class="case-section container" aria-labelledby="s1-title">
+        <div class="case-grid">
+          <div class="section-head reveal" data-anim="none">
+            <p class="step-num">Step 1</p>
+            <h2 id="s1-title" class="mask">Map the whole chain</h2>
+          </div>
+          <div class="case-body">
+            <p class="reveal">
+              Every pad passes through the same sequence of suppliers, from yarn to the warehouse. Using Beeken's
+              production data and the team's meetings with manufacturing partners, we listed every stage and what
+              each one could handle per week.
+            </p>
+          </div>
+        </div>
+        <figure class="case-fig chain-fig reveal" data-anim="none">
+          <ol class="chain" aria-label="Supply chain stages, in order">
+            <li>Yarn</li>
+            <li>Knitting</li>
+            <li class="is-limit">Fabric processing<span>sets the pace</span></li>
+            <li>Testing &amp; QA</li>
+            <li>Cut &amp; sew</li>
+            <li>Packaging</li>
+            <li>Sterilization</li>
+            <li>Warehouse</li>
+          </ol>
+          <figcaption>Each stage is a different company or process. A pad can only move as fast as the slowest stage.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ========== STEP 2 ========== -->
+      <section class="case-section container" aria-labelledby="s2-title">
+        <div class="case-grid">
+          <div class="section-head reveal" data-anim="none">
+            <p class="step-num">Step 2</p>
+            <h2 id="s2-title" class="mask">Put every stage in the same unit</h2>
+          </div>
+          <div class="case-body">
+            <p class="reveal">
+              The stages didn't measure capacity the same way. One step was measured in <em>pounds of fabric per week</em>,
+              while demand was measured in <em>pads</em>. You can't compare them until they share a unit.
+            </p>
+            <p class="reveal">
+              So we built a conversion table: for each product, how much fabric one pad uses, multiplied by its
+              expected peak demand. That turned "pads needed" into "pounds needed," product by product.
+            </p>
+            <div class="callout reveal">
+              <p class="callout-label">What the conversion showed</p>
+              <p>Product mix matters as much as total volume. One larger product made up a small share of the pads
+              but a much bigger share of the fabric, so a plan that only counts pads would miss where the pressure is.</p>
+            </div>
+          </div>
+        </div>
+        <figure class="case-fig reveal" data-anim="none">
+          <svg viewBox="0 0 640 220" role="img" aria-labelledby="mix-t mix-d" class="mix-chart">
+            <title id="mix-t">Share of pads versus share of fabric, illustration</title>
+            <desc id="mix-d">Two stacked bars. In the share of pads bar, the larger product is a thin slice. In the share of fabric bar, the same product is a much wider slice.</desc>
+            <text x="0" y="40" class="row-label">Share of pads</text>
+            <rect x="150" y="22" width="470" height="28" class="seg-base draw-x"/>
+            <rect x="150" y="22" width="32" height="28" class="seg-hi draw-x"/>
+            <text x="0" y="112" class="row-label">Share of fabric</text>
+            <rect x="150" y="94" width="470" height="28" class="seg-base draw-x d2"/>
+            <rect x="150" y="94" width="118" height="28" class="seg-hi draw-x d2"/>
+            <line x1="182" y1="56" x2="268" y2="88" class="connector"/>
+            <text x="150" y="160" class="legend"><tspan class="lg-hi">■</tspan> one larger product   <tspan class="lg-base">■</tspan> all other products</text>
+            <text x="150" y="190" class="axis-note">Illustration, not to scale</text>
+          </svg>
+        </figure>
+      </section>
+
+      <!-- ========== STEP 3 ========== -->
+      <section class="case-section container" aria-labelledby="s3-title">
+        <div class="case-grid">
+          <div class="section-head reveal" data-anim="none">
+            <p class="step-num">Step 3</p>
+            <h2 id="s3-title" class="mask">Find the stage that sets the pace</h2>
+          </div>
+          <div class="case-body">
+            <p class="reveal">
+              With everything in pads per week, we compared each stage's capacity to peak demand. Most stages had
+              room to spare. One step, fabric processing at a single supplier, could handle only a fraction of what
+              peak demand would need.
+            </p>
+            <p class="reveal">
+              That reframed the problem. Adding capacity anywhere else would not help, because every pad still has
+              to pass through that one step.
+            </p>
+          </div>
+        </div>
+        <figure class="case-fig reveal" data-anim="none">
+          <svg viewBox="0 0 640 312" role="img" aria-labelledby="cap-t cap-d" class="cap-chart">
+            <title id="cap-t">Weekly capacity by stage compared with peak demand, illustration</title>
+            <desc id="cap-d">Bar chart. A dashed line marks peak demand. Cut and sew and packaging bars rise above the line. The fabric processing bar is far below it.</desc>
+            <line x1="40" y1="250" x2="620" y2="250" class="axis"/>
+            <rect x="80"  y="200" width="110" height="50"  class="bar bar-limit grow"/>
+            <rect x="265" y="40"  width="110" height="210" class="bar grow g2"/>
+            <rect x="450" y="70"  width="110" height="180" class="bar grow g3"/>
+            <line x1="40" y1="120" x2="620" y2="120" class="demand-line"/>
+            <text x="40" y="110" class="demand-label">peak demand</text>
+            <text x="135" y="190" text-anchor="middle" class="bar-note">far short</text>
+            <text x="135" y="276" text-anchor="middle" class="bar-label">Fabric processing</text>
+            <text x="320" y="276" text-anchor="middle" class="bar-label">Cut &amp; sew</text>
+            <text x="505" y="276" text-anchor="middle" class="bar-label">Packaging</text>
+            <text x="40" y="306" class="axis-note">Illustration, not to scale</text>
+          </svg>
+        </figure>
+      </section>
+
+      <!-- ========== STEP 4 ========== -->
+      <section class="case-section container" aria-labelledby="s4-title">
+        <div class="case-grid">
+          <div class="section-head reveal" data-anim="none">
+            <p class="step-num">Step 4</p>
+            <h2 id="s4-title" class="mask">Project inventory under three scenarios</h2>
+          </div>
+          <div class="case-body">
+            <p class="reveal">
+              Next, we projected stock month by month at current capacity, under three demand scenarios:
+            </p>
+            <ul class="plain-list reveal">
+              <li><strong>Low:</strong> no new products launch.</li>
+              <li><strong>Base:</strong> Beeken's own forecast.</li>
+              <li><strong>High:</strong> demand comes in above forecast.</li>
+            </ul>
+            <p class="reveal">
+              The useful result wasn't one prediction. It was that the conclusion held in <em>every</em> scenario:
+              without more capacity at the slow step, stock eventually runs short. Higher demand only changes when.
+              A fourth line shows the same model with the extra capacity the plan calls for.
+            </p>
+          </div>
+        </div>
+        <figure class="case-fig reveal" data-anim="none">
+          <svg viewBox="0 0 640 300" role="img" aria-labelledby="inv-t inv-d" class="inv-chart">
+            <title id="inv-t">Projected inventory under three demand scenarios, illustration</title>
+            <desc id="inv-d">Line chart over the coming months. High, base and low demand lines all fall to zero at different times, high first. A fourth line, with added capacity, stays above zero.</desc>
+            <line x1="48" y1="250" x2="600" y2="250" class="axis"/>
+            <line x1="48" y1="30" x2="48" y2="250" class="axis"/>
+            <text x="56" y="44" class="axis-note">stock on hand</text>
+            <text x="600" y="274" text-anchor="end" class="axis-note">months ahead →</text>
+            <path class="inv plan line-draw" pathLength="1" d="M48 90 L160 104 L272 112 L384 118 L496 116 L600 112"/>
+            <path class="inv low line-draw l2" pathLength="1" d="M48 90 L160 110 L272 132 L384 160 L496 210 L560 250"/>
+            <path class="inv base line-draw l3" pathLength="1" d="M48 90 L160 116 L272 146 L384 190 L470 250"/>
+            <path class="inv high line-draw l4" pathLength="1" d="M48 90 L160 122 L272 168 L350 250"/>
+            <g class="inv-labels">
+              <text x="604" y="108" class="lbl-plan">with the plan</text>
+              <text x="566" y="244" class="lbl">low</text>
+              <text x="476" y="244" class="lbl">base</text>
+              <text x="356" y="244" class="lbl">high</text>
+            </g>
+            <text x="48" y="294" class="axis-note">Illustration, not to scale</text>
+          </svg>
+        </figure>
+      </section>
+
+      <!-- ========== STEP 5 ========== -->
+      <section class="case-section container" aria-labelledby="s5-title">
+        <div class="case-grid">
+          <div class="section-head reveal" data-anim="none">
+            <p class="step-num">Step 5</p>
+            <h2 id="s5-title" class="mask">Check how long the obvious fix takes</h2>
+          </div>
+          <div class="case-body">
+            <p class="reveal">
+              The obvious fix is a second supplier for the slow step. But NuStat is an FDA-cleared device, and adding
+              a new supplier means a risk assessment, process validation, and possibly a new 510(k) submission. That
+              takes many months.
+            </p>
+            <p class="reveal">
+              Putting that timeline next to the inventory projection showed a new supplier couldn't arrive in time
+              to cover the near-term gap. The short-term answer had to come from the suppliers Beeken already had,
+              with a second source started right away for the longer term.
+            </p>
+          </div>
+        </div>
+        <figure class="case-fig reveal" data-anim="none">
+          <svg viewBox="0 0 640 180" role="img" aria-labelledby="tl-t tl-d" class="tl-chart">
+            <title id="tl-t">Time until stock runs short compared with time to qualify a new supplier, illustration</title>
+            <desc id="tl-d">Two horizontal bars starting today. The bar for time until stock runs short is shorter than the bar for qualifying a new supplier.</desc>
+            <line x1="200" y1="16" x2="200" y2="140" class="axis"/>
+            <text x="200" y="10" text-anchor="middle" class="axis-note">today</text>
+            <text x="0" y="52" class="row-label">Until stock runs short</text>
+            <rect x="200" y="34" width="250" height="28" class="seg-base draw-x"/>
+            <text x="0" y="112" class="row-label">Qualify a new supplier</text>
+            <rect x="200" y="94" width="400" height="28" class="seg-hi draw-x d2"/>
+            <text x="200" y="166" class="axis-note">Illustration, not to scale</text>
+          </svg>
+        </figure>
+      </section>
+
+      <!-- ========== RECOMMENDATION ========== -->
+      <section class="case-section container" aria-labelledby="rec-title">
+        <div class="case-grid">
+          <div class="section-head reveal" data-anim="none">
+            <h2 id="rec-title" class="mask">What we recommended</h2>
+          </div>
+          <div class="case-body">
+            <p class="reveal">A 90-day plan, each action with an owner at Beeken and a date:</p>
+            <ol class="plan-list" data-stagger>
+              <li class="reveal" data-anim="left"><strong>Negotiate more capacity at the slow step</strong> with the current supplier. This is the action that closes the gap.</li>
+              <li class="reveal" data-anim="left"><strong>Send suppliers rolling forecasts</strong> so orders are steady instead of arriving in spikes.</li>
+              <li class="reveal" data-anim="left"><strong>Set a monthly product allocation plan</strong> so limited fabric goes to the products that need it first.</li>
+              <li class="reveal" data-anim="left"><strong>Build a safety buffer</strong> of the core product before demand peaks.</li>
+              <li class="reveal" data-anim="left"><strong>Start qualifying a second source now</strong>, since it takes too long to help in the short term.</li>
+            </ol>
+            <div class="callout reveal">
+              <p class="callout-label">How to tell if it's working</p>
+              <p>We also gave Beeken a simple test. If the plan is working, the projected run-short date keeps moving
+              later each month. If capacity at the slow step doesn't rise, or orders fall well below forecast, the
+              plan needs to change.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== MY PART ========== -->
+      <section class="case-section container" aria-labelledby="me-title">
+        <div class="case-grid">
+          <div class="section-head reveal" data-anim="none">
+            <h2 id="me-title" class="mask">My part</h2>
+          </div>
+          <div class="case-body">
+            <ul class="plain-list reveal">
+              <li>Analyzed demand, sales, inventory, and production data to pinpoint bottlenecks and capacity constraints.</li>
+              <li>Modeled 2x–3x demand-growth scenarios to size the production and inventory needs behind the team's recommendations.</li>
+              <li>Moved from research lead to data analyst during the project to own the team's quantitative analysis.</li>
+            </ul>
+            <p class="reveal skills-used"><span>Skills used</span> Capacity analysis · scenario modeling · unit conversion · inventory projection · data visualization</p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case-end container reveal" aria-label="More">
+        <a class="btn btn-primary" href="index.html#projects">See more projects</a>
+        <a class="btn" href="resume/Ben_Teng_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        <a class="btn" href="mailto:bteng@umass.edu">Email me</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© 2026 Ben Teng · Built with HTML, CSS, and JavaScript · Hosted on GitHub Pages</p>
+  </footer>
+</body>
+</html>

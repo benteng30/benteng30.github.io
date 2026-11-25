@@ -41,16 +41,24 @@
     const text = el.textContent.trim();
     el.setAttribute('aria-label', text);
     el.textContent = '';
-    [...text].forEach((ch, i) => {
-      const wrap = document.createElement('span');
-      wrap.className = 'char-wrap';
-      wrap.setAttribute('aria-hidden', 'true');
-      const c = document.createElement('span');
-      c.className = 'char';
-      c.style.setProperty('--i', i);
-      c.textContent = ch === ' ' ? ' ' : ch;
-      wrap.appendChild(c);
-      el.appendChild(wrap);
+    let i = 0;
+    text.split(' ').forEach((wordText, w) => {
+      if (w > 0) el.appendChild(document.createTextNode(' '));
+      // keep each word together so lines only break between words
+      const word = document.createElement('span');
+      word.className = 'char-word';
+      word.setAttribute('aria-hidden', 'true');
+      [...wordText].forEach(ch => {
+        const wrap = document.createElement('span');
+        wrap.className = 'char-wrap';
+        const c = document.createElement('span');
+        c.className = 'char';
+        c.style.setProperty('--i', i++);
+        c.textContent = ch;
+        wrap.appendChild(c);
+        word.appendChild(wrap);
+      });
+      el.appendChild(word);
     });
   });
 
@@ -194,7 +202,8 @@
   update();
 
   // Active nav link
-  const links = [...document.querySelectorAll('.nav-links a')];
+  // Only links to sections on this same page (case study pages link back to the home page)
+  const links = [...document.querySelectorAll('.nav-links a')].filter(a => a.getAttribute('href').startsWith('#'));
   const sections = links.map(a => document.querySelector(a.getAttribute('href')));
   if ('IntersectionObserver' in window) {
     const navIO = new IntersectionObserver(entries => {
