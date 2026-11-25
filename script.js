@@ -96,7 +96,7 @@
   } else {
     // Objects that start clipped or turned sideways have no visible area yet,
     // so they watch their container instead of themselves.
-    const watchParent = ['flip', 'wipe', 'pill'];
+    const watchParent = ['wipe'];
     const targets = new Map();
     items.forEach(el => {
       const t = watchParent.includes(el.dataset.anim) ? el.parentElement : el;
@@ -181,16 +181,14 @@
 
   /* ---------- 4. Pointer effects (laptops/desktops only) ---------- */
   if (finePointer && !reduceMotion) {
-    // Project cards tilt toward the cursor, with a glow that follows it
+    // Project cards tilt slightly toward the cursor
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('pointermove', e => {
         const r = card.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
         if (card.classList.contains('settled')) {
-          card.style.transform = `perspective(900px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 6).toFixed(2)}deg) translateY(-6px)`;
+          card.style.transform = `perspective(900px) rotateX(${(-y * 4).toFixed(2)}deg) rotateY(${(x * 4).toFixed(2)}deg) translateY(-4px)`;
         }
       });
       card.addEventListener('pointerleave', () => { card.style.transform = ''; });
@@ -203,7 +201,7 @@
         const r = heroArt.getBoundingClientRect();
         const x = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
         const y = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
-        heroArt.style.transform = `perspective(1000px) rotateY(${(x * 10).toFixed(2)}deg) rotateX(${(-y * 8).toFixed(2)}deg)`;
+        heroArt.style.transform = `perspective(1000px) rotateY(${(x * 6).toFixed(2)}deg) rotateX(${(-y * 5).toFixed(2)}deg)`;
       });
       hero.addEventListener('pointerleave', () => { heroArt.style.transform = ''; });
     }

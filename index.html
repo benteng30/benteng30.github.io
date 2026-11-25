@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ben Teng | Data &amp; AI Portfolio</title>
-  <meta name="description" content="Ben Teng, Operations & Information Management student at UMass Amherst who builds with data and AI. Seeking data analytics, BI, and ML internships.">
-  <meta name="theme-color" content="#0a101c">
+  <meta name="description" content="Ben Teng, Operations & Information Management student at UMass Amherst. I analyze supply-chain data and build AI tools. Seeking data analytics, BI, and ML internships.">
+  <meta name="theme-color" content="#0b0f17">
   <link rel="canonical" href="https://benteng30.github.io/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -14,18 +14,22 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://benteng30.github.io/">
   <meta property="og:title" content="Ben Teng | Data &amp; AI Portfolio">
-  <meta property="og:description" content="Operations & Information Management student at UMass Amherst who builds with data and AI. Seeking data analytics, BI, and ML internships.">
-  <meta property="og:image" content="https://benteng30.github.io/img/og-image.jpg">
+  <meta property="og:description" content="Operations & Information Management student at UMass Amherst. I analyze supply-chain data and build AI tools.">
+  <meta property="og:image" content="https://benteng30.github.io/img/og-image.jpg?v=2">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Ben Teng, Operations & Information Management student who builds with data and AI">
+  <meta property="og:image:alt" content="Ben Teng, Operations & Information Management student who analyzes supply-chain data and builds AI tools">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ben Teng | Data &amp; AI Portfolio">
-  <meta name="twitter:description" content="OIM student at UMass Amherst who builds with data and AI.">
-  <meta name="twitter:image" content="https://benteng30.github.io/img/og-image.jpg">
+  <meta name="twitter:description" content="OIM student at UMass Amherst. I analyze supply-chain data and build AI tools.">
+  <meta name="twitter:image" content="https://benteng30.github.io/img/og-image.jpg?v=2">
+  <!-- Fonts: IBM Plex Sans for text, IBM Plex Mono for data labels -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="stylesheet" href="styles.css?v=5">
-  <script src="script.js?v=5" defer></script>
+  <link rel="stylesheet" href="styles.css?v=6">
+  <script src="script.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -47,16 +51,15 @@
   <main id="main">
     <!-- ========== HERO ========== -->
     <section class="hero" id="top">
-      <div class="hero-glow" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-text">
-          <p class="eyebrow reveal"><span class="status-dot" aria-hidden="true"></span>Open to Summer 2027 internships · Data / BI / ML</p>
           <h1 class="split-chars">Ben Teng</h1>
-          <p class="headline split-words">Operations &amp; Information Management student who builds with <span class="accent-text">data and AI</span>.</p>
+          <p class="headline split-words">Operations &amp; Information Management student. I analyze supply-chain data and build AI tools.</p>
           <p class="lead reveal">
             I'm a first-year B.B.A. student at UMass Amherst's Isenberg School of Management,
             planning a second major in computer science. Right now I'm the data analyst on a supply-chain
-            scaling project, modeling demand growth with Python, SQL, and Excel.
+            scaling project, modeling demand growth with Python, SQL, and Excel. I'm looking for summer
+            internships in data analytics, business intelligence, and machine learning.
           </p>
           <div class="button-row reveal">
             <a class="btn btn-primary" href="resume/Ben_Teng_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
@@ -66,122 +69,74 @@
           </div>
         </div>
 
-        <!-- Hero illustration: supply chain network feeding a demand forecast -->
-        <figure class="hero-art reveal" data-anim="none" aria-hidden="true">
-          <svg viewBox="0 0 420 380" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="10" width="400" height="360" rx="18" class="art-panel"/>
-            <g class="edges">
-              <path style="--d:0" id="e1" d="M94 90 L166 70"/>
-              <path style="--d:1" id="e2" d="M94 90 L166 140"/>
-              <path style="--d:2" id="e3" d="M94 160 L166 140"/>
-              <path style="--d:3" id="e4" d="M214 70 L296 105"/>
-              <path style="--d:4" id="e5" d="M214 140 L296 105"/>
-            </g>
-            <g class="flow">
-              <circle r="4"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#e1"/></animateMotion></circle>
-              <circle r="4"><animateMotion dur="3.6s" begin="0.8s" repeatCount="indefinite"><mpath href="#e2"/></animateMotion></circle>
-              <circle r="4"><animateMotion dur="3s" begin="1.4s" repeatCount="indefinite"><mpath href="#e3"/></animateMotion></circle>
-              <circle r="4"><animateMotion dur="2.8s" begin="0.4s" repeatCount="indefinite"><mpath href="#e4"/></animateMotion></circle>
-              <circle r="4"><animateMotion dur="3.1s" begin="1.9s" repeatCount="indefinite"><mpath href="#e5"/></animateMotion></circle>
-            </g>
-            <g style="--d:0" class="node"><rect x="46" y="72" width="48" height="36" rx="8"/><text x="70" y="128">Supply</text></g>
-            <g style="--d:1" class="node"><rect x="46" y="142" width="48" height="36" rx="8"/><text x="70" y="198">Supply</text></g>
-            <g style="--d:2" class="node"><rect x="166" y="52" width="48" height="36" rx="8"/><text x="190" y="44">Plant</text></g>
-            <g style="--d:3" class="node"><rect x="166" y="122" width="48" height="36" rx="8"/><text x="190" y="176">Warehouse</text></g>
-            <g style="--d:4" class="node node-accent"><circle cx="320" cy="105" r="24"/><text x="320" y="146">Customers</text></g>
+        <!-- Hero figure: the question behind my Beeken work (illustration, no client data) -->
+        <figure class="hero-art reveal" data-anim="none">
+          <svg viewBox="0 0 440 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="chart-title chart-desc">
+            <title id="chart-title">When does demand outgrow capacity?</title>
+            <desc id="chart-desc">Illustrative chart. Three demand scenarios, 1x, 2x and 3x, rise over time. A dashed line marks current capacity. The 3x scenario crosses capacity first and the 2x scenario crosses later; the 1x scenario stays below it.</desc>
+            <rect x="0.5" y="0.5" width="439" height="319" rx="6" class="art-panel"/>
+            <text x="24" y="32" class="chart-title">When does demand outgrow capacity?</text>
+            <line x1="48" y1="264" x2="408" y2="264" class="axis"/>
+            <line x1="48" y1="64" x2="48" y2="264" class="axis"/>
+            <text x="408" y="288" class="axis-label" text-anchor="end">time</text>
+            <text x="48" y="56" class="axis-label" text-anchor="start">demand</text>
 
-            <line x1="46" y1="335" x2="374" y2="335" class="axis"/>
-            <g class="bars">
-              <rect x="56"  y="305" width="22" height="30" rx="3"/>
-              <rect x="88"  y="296" width="22" height="39" rx="3"/>
-              <rect x="120" y="300" width="22" height="35" rx="3"/>
-              <rect x="152" y="284" width="22" height="51" rx="3"/>
-              <rect x="184" y="276" width="22" height="59" rx="3"/>
-              <rect x="216" y="264" width="22" height="71" rx="3"/>
-            </g>
-            <path class="trend" pathLength="400" d="M67 305 L99 296 L131 300 L163 284 L195 276 L227 264"/>
-            <path class="forecast" d="M227 264 L259 252 L291 240 L323 226 L355 212"/>
-            <path class="band" d="M227 264 L259 246 L291 228 L323 208 L355 188 L355 236 L323 244 L291 252 L259 258 Z"/>
-            <text x="326" y="196" class="chart-label">forecast</text>
-            <text x="142" y="355" class="chart-label">demand history</text>
+            <line x1="48" y1="160" x2="408" y2="160" class="capacity"/>
+            <text x="56" y="176" class="cap-label">current capacity</text>
+
+            <path class="scen s1" pathLength="1" d="M48 236 L408 204"/>
+            <path class="scen s2" pathLength="1" d="M48 236 L408 132"/>
+            <path class="scen s3" pathLength="1" d="M48 236 L408 76"/>
+            <text x="416" y="208" class="end-label">1x</text>
+            <text x="416" y="136" class="end-label">2x</text>
+            <text x="416" y="80" class="end-label">3x</text>
+
+            <g class="hit h3"><circle cx="219" cy="160" r="6"/><text x="209" y="148" text-anchor="end">3x hits it here</text></g>
+            <g class="hit h2"><circle cx="311" cy="160" r="6"/><text x="321" y="184" text-anchor="start">2x hits it here</text></g>
           </svg>
+          <figcaption>The question behind my Beeken analysis. Illustration only, no client data.</figcaption>
         </figure>
-      </div>
-
-      <!-- At a glance: key facts as objects -->
-      <div class="container">
-        <ul class="glance" data-stagger aria-label="At a glance">
-          <li class="glance-item reveal" data-anim="left">
-            <span class="glance-k">Now</span>
-            <span class="glance-v">Data Analyst</span>
-            <span class="glance-d">Beeken Biomedical Supply Chain Project</span>
-          </li>
-          <li class="glance-item reveal" data-anim="right">
-            <span class="glance-k">Modeling</span>
-            <span class="glance-v"><span data-count="2">2</span>x–<span data-count="3">3</span>x</span>
-            <span class="glance-d">Demand-growth scenarios</span>
-          </li>
-          <li class="glance-item reveal" data-anim="left">
-            <span class="glance-k">Award</span>
-            <span class="glance-v">1st Place</span>
-            <span class="glance-d">ACSL Senior Contest, MA 2024–25</span>
-          </li>
-          <li class="glance-item reveal" data-anim="right">
-            <span class="glance-k">Languages</span>
-            <span class="glance-v">EN · 中文</span>
-            <span class="glance-d">Bilingual</span>
-          </li>
-        </ul>
       </div>
     </section>
 
     <!-- ========== PROJECTS ========== -->
     <section class="section container" id="projects" aria-labelledby="projects-title">
       <div class="section-head reveal" data-anim="none">
-        <span class="bg-num" aria-hidden="true">01</span><p class="kicker">01 · Selected work</p>
         <h2 id="projects-title" class="mask">Projects</h2>
       </div>
 
       <div class="cards" data-stagger>
         <article class="card reveal" data-anim="from-left">
-          <div class="card-art" aria-hidden="true">
-            <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
-              <g class="msg-user"><rect x="24" y="16" width="150" height="34" rx="12" class="bubble-user"/><rect x="38" y="29" width="96" height="8" rx="4" class="line-light"/></g>
-              <g class="msg-typing"><rect x="226" y="66" width="70" height="30" rx="12" class="bubble-typing"/><g class="typing"><circle cx="246" cy="81" r="4.5"/><circle cx="261" cy="81" r="4.5"/><circle cx="276" cy="81" r="4.5"/></g></g>
-              <g class="msg-bot"><rect x="140" y="62" width="156" height="42" rx="12" class="bubble-bot"/><rect x="154" y="74" width="120" height="7" rx="3.5" class="line-on-accent"/><rect x="154" y="88" width="80" height="7" rx="3.5" class="line-on-accent"/></g>
-            </svg>
-          </div>
           <div class="card-body">
-            <p class="card-tag">AI · Deployment</p>
-            <h3>AI Chatbot for Westwood Chinese School</h3>
+            <p class="card-tag">AI chatbot · Westwood Chinese School</p>
+            <h3>A chatbot that answers parent and student questions</h3>
+            <ol class="flow" aria-label="How the chatbot works">
+              <li>Parent or student asks a question on the school site</li>
+              <li>Chatbase bot answers it</li>
+              <li>The answer appears in the chat</li>
+            </ol>
             <p class="problem">Parents and students had routine questions about the school that staff answered one by one.</p>
             <p><strong>What I did:</strong> As Technical Manager, I built an AI chatbot with Chatbase and deployed it on the school's WordPress website. I also maintained the site and the school's computer systems.</p>
             <p><strong>Result:</strong> The chatbot is live on the school website, where parents and students can ask questions and get answers directly instead of waiting for staff.</p>
-            <ul class="chips"><li>Chatbase</li><li>WordPress</li><li>AI chatbot</li></ul>
+            <p class="tags">Chatbase · WordPress</p>
           </div>
         </article>
 
         <article class="card reveal" data-anim="from-right">
-          <div class="card-art" aria-hidden="true">
-            <svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
-              <g class="build" style="--d:0"><rect x="30" y="12" width="260" height="100" rx="10" class="browser"/><line x1="30" y1="32" x2="290" y2="32" class="browser-line"/><circle cx="44" cy="22" r="3.5" class="dot"/><circle cx="56" cy="22" r="3.5" class="dot"/><circle cx="68" cy="22" r="3.5" class="dot"/></g>
-              <rect x="46" y="44" width="110" height="10" rx="5" class="line-strong build" style="--d:1"/>
-              <rect x="46" y="60" width="80" height="7" rx="3.5" class="line-mid build" style="--d:2"/>
-              <rect x="46" y="84" width="58" height="16" rx="8" class="cta build" style="--d:3"/>
-              <g class="cms">
-                <rect x="176" y="44" width="46" height="26" rx="5" class="build" style="--d:4"/><rect x="228" y="44" width="46" height="26" rx="5" class="build" style="--d:5"/>
-                <rect x="176" y="76" width="46" height="26" rx="5" class="build" style="--d:6"/><rect x="228" y="76" width="46" height="26" rx="5" class="build" style="--d:7"/>
-              </g>
-            </svg>
-          </div>
           <div class="card-body">
-            <p class="card-tag">Web · Co-Founder</p>
-            <h3>Air Dialogue Program Website</h3>
+            <p class="card-tag">Website · Air Dialogue (co-founder)</p>
+            <h3>Online enrollment for a language program</h3>
+            <ol class="flow flow-4" aria-label="Enrollment steps on the site">
+              <li>Sign up</li>
+              <li>Choose a role</li>
+              <li>Get approved</li>
+              <li>Start learning</li>
+            </ol>
             <p class="problem">A new cross-cultural education program needed a way for families to learn about it and enroll online.</p>
             <p><strong>What I did:</strong> I co-founded Air Dialogue, which connects Chinese students with American student-teachers, and built its website with Velo, JavaScript, and CMS features for online access and enrollment.</p>
-            <p><strong>Result:</strong> The site is live and runs enrollment for both students and volunteers through a four-step flow: sign up, choose a role, get approved, start learning.</p>
-            <ul class="chips"><li>Velo</li><li>JavaScript</li><li>Wix CMS</li></ul>
-            <p class="links"><a href="https://www.airdialogue.com/" target="_blank" rel="noopener">Live site <span aria-hidden="true">→</span></a></p>
+            <p><strong>Result:</strong> The site is live and runs enrollment for both students and volunteers through the four steps above.</p>
+            <p class="tags">Velo · JavaScript · Wix CMS</p>
+            <p class="links"><a href="https://www.airdialogue.com/" target="_blank" rel="noopener">Visit the live site <span aria-hidden="true">→</span></a></p>
           </div>
         </article>
 
@@ -190,13 +145,13 @@
 
         <article class="card reveal" data-anim="from-left">
           <div class="card-body">
-            <p class="card-tag">Data · Forecasting</p>
-            <h3>Project Title</h3>
+            <p class="card-tag">Forecasting · Python</p>
+            <h3>What the project found, in plain words</h3>
             <p class="problem">One sentence on the question you answered.</p>
             <p><strong>What I did:</strong> One or two sentences.</p>
             <p><strong>Result:</strong> The finding, with a real number.</p>
-            <ul class="chips"><li>Python</li><li>pandas</li><li>scikit-learn</li></ul>
-            <p class="links"><a href="https://github.com/benteng30/REPO" target="_blank" rel="noopener">GitHub →</a></p>
+            <p class="tags">Python · pandas · scikit-learn</p>
+            <p class="links"><a href="https://github.com/benteng30/REPO" target="_blank" rel="noopener">Code on GitHub →</a></p>
           </div>
         </article>
         -->
@@ -206,7 +161,6 @@
     <!-- ========== EXPERIENCE ========== -->
     <section class="section container" id="experience" aria-labelledby="experience-title">
       <div class="section-head reveal" data-anim="none">
-        <span class="bg-num" aria-hidden="true">02</span><p class="kicker">02 · Where I've worked</p>
         <h2 id="experience-title" class="mask">Experience</h2>
       </div>
 
@@ -272,60 +226,53 @@
     <!-- ========== SKILLS ========== -->
     <section class="section container" id="skills" aria-labelledby="skills-title">
       <div class="section-head reveal" data-anim="none">
-        <span class="bg-num" aria-hidden="true">03</span><p class="kicker">03 · Toolkit</p>
         <h2 id="skills-title" class="mask">Skills</h2>
       </div>
-      <div class="skill-groups" data-stagger>
-        <div class="skill-box reveal" data-anim="flip">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6 2 12l6 6M16 6l6 6-6 6"/></svg>
-          <h3>Languages</h3>
-          <ul class="chips"><li>Python</li><li>SQL</li><li>Java</li><li>JavaScript</li><li>HTML/CSS</li></ul>
+      <dl class="skill-list" data-stagger>
+        <div class="skill-row reveal" data-anim="left">
+          <dt>Languages</dt>
+          <dd>Python, SQL, Java, JavaScript, HTML/CSS</dd>
         </div>
-        <div class="skill-box reveal" data-anim="flip">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 16v-4M11 16V8M16 16v-6M20 4l-5 4-4-2-6 4"/></svg>
-          <h3>Data &amp; AI</h3>
-          <ul class="chips"><li>Demand, sales &amp; inventory analysis</li><li>Growth-scenario modeling</li><li>LLM-based sentiment analysis</li><li>AI chatbot deployment</li></ul>
+        <div class="skill-row reveal" data-anim="left">
+          <dt>Data &amp; AI</dt>
+          <dd>Demand, sales, and inventory analysis; growth-scenario modeling; LLM-based sentiment analysis; AI chatbot deployment</dd>
         </div>
-        <div class="skill-box reveal" data-anim="flip">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></svg>
-          <h3>Tools</h3>
-          <ul class="chips"><li>Advanced Excel</li><li>Chatbase</li><li>WordPress</li><li>Velo</li><li>Wix CMS</li><li>Google Workspace</li></ul>
+        <div class="skill-row reveal" data-anim="left">
+          <dt>Tools</dt>
+          <dd>Advanced Excel, Chatbase, WordPress, Velo, Wix CMS, Google Workspace</dd>
         </div>
-        <div class="skill-box reveal" data-anim="flip">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg>
-          <h3>Training &amp; Awards</h3>
-          <ul class="chips"><li>Google AI Certificate</li><li>Inspirit AI Scholars: NLP + Algorithmic Trading</li><li>Summer Springboard at MIT: AI Certificate</li><li>ACSL 1st Place, Senior (MA)</li></ul>
+        <div class="skill-row reveal" data-anim="left">
+          <dt>Training &amp; awards</dt>
+          <dd>Google AI Certificate; Inspirit AI Scholars (NLP + Finance: Algorithmic Trading); Summer Springboard at MIT, AI Certificate; ACSL First Place, Senior Contest (MA, 2024–25)</dd>
         </div>
-      </div>
+      </dl>
     </section>
 
     <!-- ========== ABOUT ========== -->
     <section class="section container" id="about" aria-labelledby="about-title">
       <div class="about-grid">
         <div class="section-head reveal" data-anim="none">
-          <span class="bg-num" aria-hidden="true">04</span><p class="kicker">04 · Background</p>
           <h2 id="about-title" class="mask">About</h2>
-          <figure class="headshot reveal" data-anim="zoom">
+          <figure class="headshot reveal" data-anim="up">
             <img src="img/headshot.jpg" srcset="img/headshot-320.jpg 320w, img/headshot.jpg 640w" sizes="(max-width: 820px) 200px, 280px" width="640" height="640" alt="Headshot of Ben Teng in a dark suit jacket and white shirt" loading="lazy" decoding="async">
           </figure>
         </div>
         <p class="prose reveal" data-anim="wipe">
           I grew up in Westwood, Massachusetts, and I'm bilingual in English and Mandarin.
-          I started coding at an early age, and that experience led me to explore <mark class="hl">machine learning</mark> and,
-          eventually, <mark class="hl">data and AI</mark>. Along the way, I built websites for local organizations. I'm working toward a career that starts in data analytics and grows into
-          machine learning. In high school, I played varsity tennis and was vice president of the Computer
-          Science Club. I'm looking for a summer internship in the Boston area where I can turn
-          operational data into decisions.
+          I started coding at an early age, and that experience led me to explore machine learning and,
+          eventually, data and AI. Along the way, I built websites for local organizations. I'm working toward
+          a career that starts in data analytics and grows into machine learning. In high school, I played
+          varsity tennis and was vice president of the Computer Science Club. I'm looking for a summer
+          internship in the Boston area where I can turn operational data into decisions.
         </p>
       </div>
     </section>
 
     <!-- ========== CONTACT ========== -->
     <section class="section container" id="contact" aria-labelledby="contact-title">
-      <div class="contact-box reveal" data-anim="pill">
-        <p class="kicker">05 · Get in touch</p>
-        <h2 id="contact-title" class="mask">Let's talk data.</h2>
-        <p class="prose">The fastest way to reach me is email. I'm happy to talk about internships, projects, or anything on this page.</p>
+      <div class="contact reveal" data-anim="up">
+        <h2 id="contact-title" class="mask">Contact</h2>
+        <p class="prose">Email is the fastest way to reach me. I'm happy to talk about internships, projects, or anything on this page.</p>
         <div class="button-row">
           <a class="btn btn-primary" href="mailto:bteng@umass.edu">bteng@umass.edu</a>
           <a class="btn" href="https://www.linkedin.com/in/ben-teng-31b1a333a/" target="_blank" rel="noopener">LinkedIn</a>
