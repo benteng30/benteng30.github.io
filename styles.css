@@ -155,7 +155,7 @@ h3 { font-size: 19px; margin: 0 0 8px; line-height: 1.35; font-weight: 600; }
 strong { color: var(--text); font-weight: 600; }
 
 /* ----- Project cards ----- */
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); display: flex; flex-direction: column; }
 .card.settled { transition: transform .4s var(--ease), border-color .3s; }
 .card.settled:hover { border-color: var(--border-strong); }
@@ -174,7 +174,7 @@ strong { color: var(--text); font-weight: 600; }
 .flow { list-style: none; margin: 4px 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; counter-reset: step; }
 .flow-4 { grid-template-columns: repeat(4, 1fr); }
 .flow li {
-  counter-increment: step; position: relative;
+  counter-increment: step; position: relative; min-width: 0; overflow-wrap: break-word;
   background: var(--surface-2); border: 1px solid var(--border); border-radius: 4px;
   padding: 8px 12px 12px; font-size: 14px; line-height: 1.4; color: var(--text);
 }
@@ -252,6 +252,7 @@ strong { color: var(--text); font-weight: 600; }
   .hero-art { max-width: 480px; }
   .about-grid { grid-template-columns: 1fr; gap: 16px; }
   .skill-row { grid-template-columns: 1fr; gap: 4px; }
+  .cards { grid-template-columns: 1fr; }
   .section { padding-top: 80px; }
 }
 @media (max-width: 600px) {
