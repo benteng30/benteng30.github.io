@@ -3,6 +3,34 @@
 // Visitors with "reduce motion" turned on see everything immediately.
 
 (function () {
+  /* ---------- 0. Always start at the top on reload ---------- */
+  // Browsers (especially on phones) restore the old scroll position on reload,
+  // and a #section in the address bar makes them jump there. On a reload we
+  // clear the #section and go to the top. A first visit to a shared link
+  // like /#projects still opens that section.
+  const navEntry = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  const isReload = navEntry ? navEntry.type === 'reload' : (performance.navigation && performance.navigation.type === 1);
+  if (isReload || !location.hash) {
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    const toTop = () => window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    toTop();
+    window.addEventListener('load', toTop);
+    window.addEventListener('pageshow', e => { if (e.persisted) toTop(); });
+  }
+
+  // Menu links scroll smoothly without adding #section to the address bar
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const id = link.getAttribute('href');
+      const target = id === '#top' ? document.body : document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      if (id === '#top') window.scrollTo({ top: 0, behavior: 'smooth' });
+      else target.scrollIntoView({ behavior: 'smooth' });
+      if (id === '#main') target.focus({ preventScroll: true });
+    });
+  });
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   const root = document.documentElement;
